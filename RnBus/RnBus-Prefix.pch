@@ -1,0 +1,19 @@
+//
+//  RnBus-Prefix.pch
+//  RnBus
+//
+//  Created by Stefan Lage on 07/09/15.
+//  Copyright (c) 2015 Stefan Lage. All rights reserved.
+//
+
+#ifndef RnBus_RnBus_Prefix_pch
+    #define RnBus_RnBus_Prefix_pch
+
+    #ifndef TARGET_OS_IOS
+        #define TARGET_OS_IOS TARGET_OS_IPHONE
+    #endif
+    #ifndef TARGET_OS_WATCH
+        #define TARGET_OS_WATCH 0
+    #endif
+
+#endif
