@@ -24,6 +24,11 @@ typedef NS_ENUM(NSInteger, RBStatusCode){
  */
 @interface RBRestApi(RESTApi)
 
--(void)busPositions:(void (^)(NSInteger, RBStatusCode, NSArray*, NSError*))completion;
+/**
+ *  Request the server to get all bus stations available
+ *
+ *  @param completion, results is a NSArray of RBBusStation instances
+ */
+-(void)busStationsWithCompletion:(void (^)(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray *results, NSError* error))completion;
 
 @end

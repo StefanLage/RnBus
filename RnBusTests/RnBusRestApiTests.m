@@ -29,10 +29,17 @@
 }
 
 /**
- *  Get all bus positions in Rennes
+ *  Test instanciation of the singleton
  */
--(void)testGetBusPositions{
-    [[RBRestApi sharedManager] busPositions:^void(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray* results, NSError *error) {
+- (void)testSingletonInstance{
+    XCTAssert([RBRestApi sharedManager], @"Pass");
+}
+
+/**
+ *  Get all bus stations in Rennes
+ */
+-(void)testGetBusStations{
+    [[RBRestApi sharedManager] busStationsWithCompletion:^void(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray* results, NSError *error) {
         XCTAssertEqual(statusCode, 200, @"Status code OK");
         XCTAssertEqual(strangeStatusCode, RBSuccess, @"Strange status code OK");
         XCTAssert(results, @"Should not be nil");
@@ -41,27 +48,31 @@
     }];
 }
 
--(void)testCheckBusPositionKeys{
-    [[RBRestApi sharedManager] busPositions:^void(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray* results, NSError *error) {
-        BOOL test = [results.firstObject containKeys:@"name"];
+/**
+ *  Check all keys of a bus station's JSON
+ */
+-(void)testCheckBusStationKeys{
+    [[RBRestApi sharedManager] busStationsWithCompletion:^void(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray* results, NSError *error) {
+        NSDictionary *fBusPosition = results.firstObject;
+        BOOL test = [fBusPosition containKeys:@"name"];
         XCTAssert(test, @"Should got a name");
-        test = [results.firstObject containKeys:@"type"];
+        test = [fBusPosition containKeys:@"type"];
         XCTAssert(test, @"Should got a type");
-        test = [results.firstObject containKeys:@"address"];
+        test = [fBusPosition containKeys:@"address"];
         XCTAssert(test, @"Should got an address");
-        test = [results.firstObject containKeys:@"zipcode"];
+        test = [fBusPosition containKeys:@"zipcode"];
         XCTAssert(test, @"Should got a zipcode");
-        test = [results.firstObject containKeys:@"city"];
+        test = [fBusPosition containKeys:@"city"];
         XCTAssert(test, @"Should got a city");
-        test = [results.firstObject containKeys:@"district"];
+        test = [fBusPosition containKeys:@"district"];
         XCTAssert(test, @"Should got a district");
-        test = [results.firstObject containKeys:@"phone"];
+        test = [fBusPosition containKeys:@"phone"];
         XCTAssert(test, @"Should got a typhonepe");
-        test = [results.firstObject containKeys:@"schedule"];
+        test = [fBusPosition containKeys:@"schedule"];
         XCTAssert(test, @"Should got a schedule");
-        test = [results.firstObject containKeys:@"latitude"];
+        test = [fBusPosition containKeys:@"latitude"];
         XCTAssert(test, @"Should got a latitude");
-        test = [results.firstObject containKeys:@"longitude"];
+        test = [fBusPosition containKeys:@"longitude"];
         XCTAssert(test, @"Should got a longitude");
     }];
 }

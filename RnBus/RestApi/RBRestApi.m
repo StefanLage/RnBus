@@ -9,18 +9,23 @@
 #import "RBRestApi.h"
 #import "AFNetworking.h"
 #import "NSDictionary+JSON.h"
+#import "RBBusStation.h"
+#import "RBLocation.h"
 
 typedef NS_ENUM(NSInteger, ApiVersion) {
     Version1,
     Version2
 };
 
-static NSString * const _queryFormat     = @"json";
-static NSString * const _key             = @"MWCHVYQ1ZE94PA5";
-static NSString * const _baseUrl         = @"http://data.keolis-rennes.com";
-static NSString * const _version         = @"2.0";
-static NSString * const _urlParameter    = @"%@/?version=%@&key=%@&cmd=%@";
-static NSString * const _cmdBusPositions = @"getpos";
+static NSString * const _queryFormat          = @"json";
+static NSString * const _key                  = @"MWCHVYQ1ZE94PA5";
+static NSString * const _baseUrl              = @"http://data.keolis-rennes.com";
+static NSString * const _version_1            = @"1.0";
+static NSString * const _version_2            = @"2.0";
+static NSString * const _version_2_2          = @"2.2";
+static NSString * const _urlParameter         = @"%@/?version=%@&key=%@&cmd=%@";
+static NSString * const _cmdBusStations       = @"getstation&network=star";
+static NSString * const _cmdNextBusDepartures = @"getbusnextdepartures&param[mode]=line&param[route]=%@&param[direction]=1";
 
 @interface RBRestApi()
 
@@ -68,29 +73,47 @@ static RBRestApi *sharedManager = nil;
 #pragma mark - RBRestApi (RESTApi)
 @implementation RBRestApi (RESTApi)
 
-#pragma mark - 
+#pragma mark - Public methods
 
 /**
- *  Get the positions of all bus/subways in Rennes
+ *  Get the stations of all bus/subways in Rennes
  *
  *  @param completion
  */
--(void)busPositions:(void (^)(NSInteger, RBStatusCode, NSArray*, NSError*))completion{
-    [self.sessionManager GET:[NSString stringWithFormat:_urlParameter, _queryFormat, _version, _key, _cmdBusPositions]
+-(void)busStationsWithCompletion:(void (^)(NSInteger statusCode, RBStatusCode strangeStatusCode, NSArray* results, NSError* error))completion{
+    [self.sessionManager GET:[NSString stringWithFormat:_urlParameter, _queryFormat, _version_1, _key, _cmdBusStations]
                   parameters:@{@"format": @"json"}
                      success:^(NSURLSessionDataTask *operation, id responseObject) {
-                         NSHTTPURLResponse *response    = (NSHTTPURLResponse*)operation.response;
-                         NSArray *results               = nil;
+                         NSHTTPURLResponse *response = (NSHTTPURLResponse*)operation.response;
+                         NSMutableArray *results     = nil;
                          RBStatusCode strangeStatutCode = RBError;
                          
                          // Be sure the status code of the API exist
-                         if([responseObject containKeys:@"opendata", @"answer", @"status", @"@attributes", @"code"])
+                         if([responseObject containKeys:@"opendata", @"answer", @"status", @"@attributes", @"code", nil])
                              strangeStatutCode = ([responseObject[@"opendata"][@"answer"][@"status"][@"@attributes"][@"code"] integerValue] == 0) ? RBSuccess : RBError;
                          // Check the data architecture
-                         if([responseObject containKeys:@"opendata", @"answer", @"data", @"pos"])
-                             results = responseObject[@"opendata"][@"answer"][@"data"][@"pos"];
-                         
-                         // Send the result
+                         if([responseObject containKeys:@"opendata", @"answer", @"data", @"station", nil]){
+                             // Map all results as a RBBusStation instance
+                             results = [NSMutableArray new];
+                             for (NSDictionary *busStationJson in responseObject[@"opendata"][@"answer"][@"data"][@"station"]){
+                                 // Add bus station with coordinates only
+                                 if([busStationJson[@"latitude"] length] > 0 && [busStationJson[@"longitude"] length] > 0){
+                                     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+                                     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+                                     RBBusStation *busStation = [RBBusStation new];
+                                     [busStation setStationId:[busStationJson[@"id"] integerValue]];
+                                     [busStation setName:busStationJson[@"name"]];
+                                     [busStation setLatitude:[numberFormatter numberFromString:busStationJson[@"latitude"]]];
+                                     [busStation setLongitude:[numberFormatter numberFromString:busStationJson[@"longitude"]]];
+                                     
+                                     CLLocation *busLocation = [[CLLocation alloc]initWithLatitude:[busStation.latitude doubleValue]
+                                                                                         longitude:[busStation.longitude doubleValue]];
+                                     [busStation setDistance:[[RBLocation sharedManager] distanceFromLocation:busLocation]];
+                                     [results addObject:busStation];
+                                 }
+                             }
+                         }
+                         // Call the block
                          completion(response.statusCode, strangeStatutCode, results, nil);
                      } failure:^(NSURLSessionDataTask *operation, NSError *error){
                          NSHTTPURLResponse *response = (NSHTTPURLResponse*)operation.response;
