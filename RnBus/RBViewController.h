@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLParallaxController.h"
+#import <CoreData/CoreData.h>
 
-@interface ViewController : UIViewController
-
+@interface RBViewController : SLParallaxController <NSFetchedResultsControllerDelegate>
 
 @end
 
