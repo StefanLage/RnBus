@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "RBRestApi.h"
+#import "RBPersistent.h"
+#import "RBLocation.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Start the location
+    [[RBLocation sharedManager] startLocation];
     return YES;
 }
 
