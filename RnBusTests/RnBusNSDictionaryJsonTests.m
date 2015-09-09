@@ -28,6 +28,11 @@
 }
 
 #pragma mark - Category test
+
+/**
+ *  Test NSDictionary's funcitonality allowing to check if it contains a list of keys
+ *  Should SUCCESS
+ */
 -(void)testDictionaryJsonSuccess{
     NSDictionary *testDictionary = @{
                                      @"test1": @{
@@ -42,6 +47,10 @@
     XCTAssert(test, @"Pass");
 }
 
+/**
+ *  Test NSDictionary's funcitonality allowing to check if it contains a list of keys
+ *  Should FAIL
+ */
 -(void)testDictionaryJsonFailure{
     NSDictionary *testDictionary = @{
                                      @"test2": @{
