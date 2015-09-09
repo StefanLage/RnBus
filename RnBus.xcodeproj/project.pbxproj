@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8431DB41B9F1D3800889640 /* Rennes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F8431DB31B9F1D3800889640 /* Rennes.gpx */; };
+		F8431DBB1BA01BD900889640 /* RnBusLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8431DBA1BA01BD900889640 /* RnBusLocation.m */; };
 		F864AD7A1B9DDDCE00F9F73A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F864AD791B9DDDCE00F9F73A /* main.m */; };
 		F864AD7D1B9DDDCE00F9F73A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F864AD7C1B9DDDCE00F9F73A /* AppDelegate.m */; };
-		F864AD801B9DDDCE00F9F73A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F864AD7F1B9DDDCE00F9F73A /* ViewController.m */; };
+		F864AD801B9DDDCE00F9F73A /* RBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F864AD7F1B9DDDCE00F9F73A /* RBViewController.m */; };
 		F864AD831B9DDDCE00F9F73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F864AD811B9DDDCE00F9F73A /* Main.storyboard */; };
 		F864AD851B9DDDCE00F9F73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F864AD841B9DDDCE00F9F73A /* Images.xcassets */; };
 		F864AD881B9DDDCE00F9F73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F864AD861B9DDDCE00F9F73A /* LaunchScreen.xib */; };
@@ -35,6 +37,12 @@
 		F864ADED1B9E421C00F9F73A /* RnBusNSDictionaryJsonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F864ADEC1B9E421C00F9F73A /* RnBusNSDictionaryJsonTests.m */; };
 		F864ADEF1B9E425300F9F73A /* RnBusRestApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F864ADEE1B9E425300F9F73A /* RnBusRestApiTests.m */; };
 		F864ADF21B9E49F200F9F73A /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F864ADF11B9E49F200F9F73A /* NSDictionary+JSON.m */; };
+		F8CD27851B9EC77C0002A232 /* RBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8CD27831B9EC77C0002A232 /* RBModel.xcdatamodeld */; };
+		F8CD27881B9EC7F90002A232 /* RBPersistent.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CD27871B9EC7F90002A232 /* RBPersistent.m */; };
+		F8CD278A1B9ED35F0002A232 /* RnBusCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CD27891B9ED35F0002A232 /* RnBusCoreDataTests.m */; };
+		F8CD278E1B9EDE140002A232 /* RBBusStation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CD278D1B9EDE140002A232 /* RBBusStation.m */; };
+		F8CD27921B9EEA350002A232 /* RBLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CD27911B9EEA350002A232 /* RBLocation.m */; };
+		F8CD27971B9EF17A0002A232 /* SLParallaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CD27961B9EF17A0002A232 /* SLParallaxController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +56,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F8431DB31B9F1D3800889640 /* Rennes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Rennes.gpx; sourceTree = "<group>"; };
+		F8431DB51B9F40C400889640 /* RBModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RBModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		F8431DB91B9F7F5200889640 /* RBModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RBModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		F8431DBA1BA01BD900889640 /* RnBusLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnBusLocation.m; sourceTree = "<group>"; };
 		F864AD741B9DDDCE00F9F73A /* RnBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RnBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F864AD781B9DDDCE00F9F73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F864AD791B9DDDCE00F9F73A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F864AD7B1B9DDDCE00F9F73A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F864AD7C1B9DDDCE00F9F73A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F864AD7E1B9DDDCE00F9F73A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F864AD7F1B9DDDCE00F9F73A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F864AD7E1B9DDDCE00F9F73A /* RBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBViewController.h; sourceTree = "<group>"; };
+		F864AD7F1B9DDDCE00F9F73A /* RBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBViewController.m; sourceTree = "<group>"; };
 		F864AD821B9DDDCE00F9F73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F864AD841B9DDDCE00F9F73A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F864AD871B9DDDCE00F9F73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -105,6 +117,16 @@
 		F864ADEE1B9E425300F9F73A /* RnBusRestApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnBusRestApiTests.m; sourceTree = "<group>"; };
 		F864ADF01B9E49F200F9F73A /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+JSON.h"; path = "Categories/NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		F864ADF11B9E49F200F9F73A /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "Categories/NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		F8CD27841B9EC77C0002A232 /* RBModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RBModel.xcdatamodel; sourceTree = "<group>"; };
+		F8CD27861B9EC7F90002A232 /* RBPersistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBPersistent.h; sourceTree = "<group>"; };
+		F8CD27871B9EC7F90002A232 /* RBPersistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPersistent.m; sourceTree = "<group>"; };
+		F8CD27891B9ED35F0002A232 /* RnBusCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnBusCoreDataTests.m; sourceTree = "<group>"; };
+		F8CD278C1B9EDE140002A232 /* RBBusStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBBusStation.h; path = RestApi/Mapping/RBBusStation.h; sourceTree = "<group>"; };
+		F8CD278D1B9EDE140002A232 /* RBBusStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBBusStation.m; path = RestApi/Mapping/RBBusStation.m; sourceTree = "<group>"; };
+		F8CD27901B9EEA350002A232 /* RBLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBLocation.h; path = Location/RBLocation.h; sourceTree = "<group>"; };
+		F8CD27911B9EEA350002A232 /* RBLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBLocation.m; path = Location/RBLocation.m; sourceTree = "<group>"; };
+		F8CD27951B9EF17A0002A232 /* SLParallaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLParallaxController.h; sourceTree = "<group>"; };
+		F8CD27961B9EF17A0002A232 /* SLParallaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLParallaxController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +147,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8431DB21B9F1D3800889640 /* GPX */ = {
+			isa = PBXGroup;
+			children = (
+				F8431DB31B9F1D3800889640 /* Rennes.gpx */,
+			);
+			path = GPX;
+			sourceTree = "<group>";
+		};
 		F864AD6B1B9DDDCE00F9F73A = {
 			isa = PBXGroup;
 			children = (
+				F8431DB21B9F1D3800889640 /* GPX */,
 				F864AD761B9DDDCE00F9F73A /* RnBus */,
 				F864AD901B9DDDCE00F9F73A /* RnBusTests */,
 				F864AD751B9DDDCE00F9F73A /* Products */,
@@ -147,16 +178,15 @@
 		F864AD761B9DDDCE00F9F73A /* RnBus */ = {
 			isa = PBXGroup;
 			children = (
-				F864ADE81B9E363B00F9F73A /* Categories */,
-				F864AD9F1B9DDE7A00F9F73A /* CoreData */,
-				F864AD9E1B9DDE7000F9F73A /* RestApi */,
 				F864AD7B1B9DDDCE00F9F73A /* AppDelegate.h */,
 				F864AD7C1B9DDDCE00F9F73A /* AppDelegate.m */,
-				F864AD7E1B9DDDCE00F9F73A /* ViewController.h */,
-				F864AD7F1B9DDDCE00F9F73A /* ViewController.m */,
-				F864AD811B9DDDCE00F9F73A /* Main.storyboard */,
-				F864AD861B9DDDCE00F9F73A /* LaunchScreen.xib */,
+				F864ADE81B9E363B00F9F73A /* Categories */,
+				F8CD27931B9EEE7C0002A232 /* Controllers */,
+				F8CD27801B9EC7590002A232 /* CoreData */,
+				F8CD278F1B9EE9CD0002A232 /* Location */,
 				F864AD9D1B9DDDDA00F9F73A /* Resources */,
+				F864AD9E1B9DDE7000F9F73A /* RestApi */,
+				F8CD27981B9EF1A00002A232 /* UI */,
 			);
 			path = RnBus;
 			sourceTree = "<group>";
@@ -177,6 +207,8 @@
 				F864AD931B9DDDCE00F9F73A /* RnBusTests.m */,
 				F864ADEC1B9E421C00F9F73A /* RnBusNSDictionaryJsonTests.m */,
 				F864ADEE1B9E425300F9F73A /* RnBusRestApiTests.m */,
+				F8CD27891B9ED35F0002A232 /* RnBusCoreDataTests.m */,
+				F8431DBA1BA01BD900889640 /* RnBusLocation.m */,
 				F864AD911B9DDDCE00F9F73A /* Supporting Files */,
 			);
 			path = RnBusTests;
@@ -202,22 +234,17 @@
 		F864AD9E1B9DDE7000F9F73A /* RestApi */ = {
 			isa = PBXGroup;
 			children = (
+				F8CD278B1B9EDD0C0002A232 /* Mapping */,
 				F864ADA51B9DE98A00F9F73A /* RBRestApi.h */,
 				F864ADA61B9DE98A00F9F73A /* RBRestApi.m */,
 			);
 			name = RestApi;
 			sourceTree = "<group>";
 		};
-		F864AD9F1B9DDE7A00F9F73A /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
 		F864ADA01B9DE59800F9F73A /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F8CD27941B9EF17A0002A232 /* SLParallaxController */,
 				F864ADAF1B9DEBC800F9F73A /* AFNetworking */,
 				F864ADC31B9DEBC800F9F73A /* UIKit+AFNetworking */,
 			);
@@ -284,6 +311,78 @@
 				F864ADF11B9E49F200F9F73A /* NSDictionary+JSON.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		F8CD27801B9EC7590002A232 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD27811B9EC7590002A232 /* Classes */,
+				F8CD27821B9EC7590002A232 /* Models */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F8CD27811B9EC7590002A232 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD27861B9EC7F90002A232 /* RBPersistent.h */,
+				F8CD27871B9EC7F90002A232 /* RBPersistent.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F8CD27821B9EC7590002A232 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD27831B9EC77C0002A232 /* RBModel.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8CD278B1B9EDD0C0002A232 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD278C1B9EDE140002A232 /* RBBusStation.h */,
+				F8CD278D1B9EDE140002A232 /* RBBusStation.m */,
+			);
+			name = Mapping;
+			sourceTree = "<group>";
+		};
+		F8CD278F1B9EE9CD0002A232 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD27901B9EEA350002A232 /* RBLocation.h */,
+				F8CD27911B9EEA350002A232 /* RBLocation.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		F8CD27931B9EEE7C0002A232 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F864AD7E1B9DDDCE00F9F73A /* RBViewController.h */,
+				F864AD7F1B9DDDCE00F9F73A /* RBViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F8CD27941B9EF17A0002A232 /* SLParallaxController */ = {
+			isa = PBXGroup;
+			children = (
+				F8CD27951B9EF17A0002A232 /* SLParallaxController.h */,
+				F8CD27961B9EF17A0002A232 /* SLParallaxController.m */,
+			);
+			name = SLParallaxController;
+			path = Libraries/SLParallaxController;
+			sourceTree = "<group>";
+		};
+		F8CD27981B9EF1A00002A232 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F864AD811B9DDDCE00F9F73A /* Main.storyboard */,
+				F864AD861B9DDDCE00F9F73A /* LaunchScreen.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +467,7 @@
 			files = (
 				F864AD831B9DDDCE00F9F73A /* Main.storyboard in Resources */,
 				F864AD881B9DDDCE00F9F73A /* LaunchScreen.xib in Resources */,
+				F8431DB41B9F1D3800889640 /* Rennes.gpx in Resources */,
 				F864AD851B9DDDCE00F9F73A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,18 +490,23 @@
 				F864ADE21B9DEBC800F9F73A /* UIButton+AFNetworking.m in Sources */,
 				F864ADE51B9DEBC800F9F73A /* UIRefreshControl+AFNetworking.m in Sources */,
 				F864ADE11B9DEBC800F9F73A /* UIAlertView+AFNetworking.m in Sources */,
-				F864AD801B9DDDCE00F9F73A /* ViewController.m in Sources */,
+				F864AD801B9DDDCE00F9F73A /* RBViewController.m in Sources */,
 				F864ADDA1B9DEBC800F9F73A /* AFSecurityPolicy.m in Sources */,
 				F864AD7D1B9DDDCE00F9F73A /* AppDelegate.m in Sources */,
 				F864ADD71B9DEBC800F9F73A /* AFHTTPRequestOperationManager.m in Sources */,
 				F864ADDB1B9DEBC800F9F73A /* AFURLConnectionOperation.m in Sources */,
 				F864ADE31B9DEBC800F9F73A /* UIImageView+AFNetworking.m in Sources */,
 				F864ADD61B9DEBC800F9F73A /* AFHTTPRequestOperation.m in Sources */,
+				F8CD27971B9EF17A0002A232 /* SLParallaxController.m in Sources */,
 				F864ADE01B9DEBC800F9F73A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				F864ADA71B9DE98A00F9F73A /* RBRestApi.m in Sources */,
 				F864ADDC1B9DEBC800F9F73A /* AFURLRequestSerialization.m in Sources */,
+				F8CD27881B9EC7F90002A232 /* RBPersistent.m in Sources */,
+				F8CD278E1B9EDE140002A232 /* RBBusStation.m in Sources */,
 				F864ADF21B9E49F200F9F73A /* NSDictionary+JSON.m in Sources */,
 				F864ADD81B9DEBC800F9F73A /* AFHTTPSessionManager.m in Sources */,
+				F8CD27921B9EEA350002A232 /* RBLocation.m in Sources */,
+				F8CD27851B9EC77C0002A232 /* RBModel.xcdatamodeld in Sources */,
 				F864ADD91B9DEBC800F9F73A /* AFNetworkReachabilityManager.m in Sources */,
 				F864ADDD1B9DEBC800F9F73A /* AFURLResponseSerialization.m in Sources */,
 				F864ADE61B9DEBC800F9F73A /* UIWebView+AFNetworking.m in Sources */,
@@ -416,8 +521,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F864ADED1B9E421C00F9F73A /* RnBusNSDictionaryJsonTests.m in Sources */,
+				F8431DBB1BA01BD900889640 /* RnBusLocation.m in Sources */,
 				F864AD941B9DDDCE00F9F73A /* RnBusTests.m in Sources */,
 				F864ADEF1B9E425300F9F73A /* RnBusRestApiTests.m in Sources */,
+				F8CD278A1B9ED35F0002A232 /* RnBusCoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "RnBus/RnBus-Prefix.pch";
 				INFOPLIST_FILE = RnBus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -547,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "RnBus/RnBus-Prefix.pch";
 				INFOPLIST_FILE = RnBus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -620,6 +729,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F8CD27831B9EC77C0002A232 /* RBModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F8431DB91B9F7F5200889640 /* RBModel 3.xcdatamodel */,
+				F8431DB51B9F40C400889640 /* RBModel 2.xcdatamodel */,
+				F8CD27841B9EC77C0002A232 /* RBModel.xcdatamodel */,
+			);
+			currentVersion = F8431DB91B9F7F5200889640 /* RBModel 3.xcdatamodel */;
+			path = RBModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F864AD6C1B9DDDCE00F9F73A /* Project object */;
 }
